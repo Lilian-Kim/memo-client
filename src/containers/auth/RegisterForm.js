@@ -34,7 +34,7 @@ const RegisterForm = ({history}) => {
       setError('빈 칸을 모두 입력하세요')
       return
     }
-    dispatch(register({ email, password }))
+    dispatch(register({name, email, password }))
   }
 
   //컴포넌트가 처음 렌더링될 때 form초기화
