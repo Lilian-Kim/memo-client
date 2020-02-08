@@ -14,6 +14,7 @@ const RegisterForm = ({history}) => {
     authError: auth.authError,
     user: user.user,
   }))
+  // console.log(user)
   //인풋 변경 이벤트 핸들러
   const onChange = e => {
     const { value, name } = e.target
@@ -34,7 +35,7 @@ const RegisterForm = ({history}) => {
       setError('빈 칸을 모두 입력하세요')
       return
     }
-    dispatch(register({ email, password }))
+    dispatch(register({ name, email, password }))
   }
 
   //컴포넌트가 처음 렌더링될 때 form초기화
@@ -45,7 +46,7 @@ const RegisterForm = ({history}) => {
   useEffect(() => {
     if (authError) {
       //이미 계정이 존재
-      if (authError.response.state === 409){
+      if (authError.response.status === 409){
         //메세지 최종적으로 추후 수정하기
         setError('이미 존재하는 걔정입니다.')
         return
@@ -66,7 +67,7 @@ const RegisterForm = ({history}) => {
     if (user) {
       console.log('check api 성공')
       console.log(user)
-      history.push('/login')
+      history.push('/')
       try{
         localStorage.setItem('user', JSON.stringify(user))
       }catch(e){

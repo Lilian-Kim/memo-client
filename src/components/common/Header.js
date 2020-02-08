@@ -22,8 +22,9 @@ const Header = ({ user, onLogout}) => {
           {user ? (
             <>
               <li>{user.name}</li>
+              <li>{user.email}</li>
               <li>
-                <NavLink onClick={onLogout}>로그아웃</NavLink>
+                <NavLink onClick={onLogout} to="/logout">로그아웃</NavLink>
               </li>
             </>
           ) : (

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { changeField, initializeForm, login } from 'modules/auth.js'
+import { changeField, initializeForm, login } from 'modules/auth'
 import AuthForm from 'components/auth/AuthForm'
 import { check } from 'modules/user'
 
@@ -51,6 +51,7 @@ const LoginForm = ({ history }) => {
 
   useEffect(() => {
     if (user) {
+      console.log(user.name)
       history.push('/')
       try{
         localStorage.setItem('user', JSON.stringify(user))
