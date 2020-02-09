@@ -14,12 +14,13 @@ export default function createRequestSaga(type, request) {
   return function*(action) {
     yield put(startLoading(type))
     try {
-      const response = yield call(request, action.payload)
+      const response = yield call(request, action.payload)//리퀘스트 함수, 리퀘스트에 action.payload 
       yield put({
-        type: SUCCESS,
+        type: SUCCESS,//액션 타입
         payload: response.data,
         meta: response,
-      })
+        // token: response.data.data.token
+      }) // success 액션 발생 dispatch
     } catch (e) {
       yield put({
         type: FAILURE,

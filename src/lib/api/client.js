@@ -2,8 +2,8 @@ import axios from 'axios'
 
 const client = axios.create()
 
-const token = localStorage.getItem('token');
-client.defaults.headers.common['Authorization'] = `Bearer ${token}`
+// const token = localStorage.getItem('token');
+// client.defaults.headers.common['Authorization'] = `Bearer ${token}`
 /*
 //api 주소를 다른 곳으로 사용함
 client.defaults.baseURL = 'https://external-api-server.com/'

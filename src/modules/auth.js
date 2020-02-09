@@ -56,6 +56,7 @@ const initialState = {
     },
     auth: null,
     authError:null,
+    token:'',
 }
 
 const auth = handleActions(
@@ -73,6 +74,8 @@ const auth = handleActions(
             ...state,
             authError: null,
             auth,
+            token:auth.data.token,
+            // token:1234,
         }),
         [REGISTER_FAILURE]:(state, {payload:error}) => ({
             ...state,
@@ -82,7 +85,9 @@ const auth = handleActions(
             ...state,
             authError: null,
             auth,
-        }, console.log(auth)),
+            token:auth.data.token,
+            // token:1234,
+        }),
         [LOGIN_FAILURE]:(state, {payload:error}) => ({
             ...state,
             authError: error,
