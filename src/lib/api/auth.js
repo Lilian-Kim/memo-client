@@ -1,6 +1,6 @@
 import client from './client'
 
-const token = localStorage.getItem('token')
+// const token = localStorage.getItem('token')
 
 // const _token = {
 //     headers: {'Authorization' : `Bearer ${token}`}
@@ -13,10 +13,6 @@ export const login = ({
     client.post('/api/auth/sign-in', {
         email,
         password
-    }, {
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
     })
 
 //register  -> signup
@@ -29,17 +25,10 @@ export const register = ({
         name,
         email,
         password
-    }, {
-        Authorization: `Bearer ${token}`
     })
 
 //로그인 상태 확인 -> me
-export const check = () => client.get('/api/auth/me', {
-    headers: {
-        Authorization: `Bearer ${token}`
-    }
-
-})
+export const check = () => client.get('/api/auth/me')
 
 //로그아웃
 export const logout = () => client.post('/api/auth/logout')

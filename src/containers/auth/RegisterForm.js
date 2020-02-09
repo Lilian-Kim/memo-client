@@ -73,6 +73,9 @@ const RegisterForm = ({history}) => {
         console.log('localStorage is not working')
       }     
     }
+    console.log('---------')
+    console.log('로그인 체크 실패')
+    console.log('---------')
   }, [history, user])
 
   return (

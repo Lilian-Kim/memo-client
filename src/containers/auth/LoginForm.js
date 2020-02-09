@@ -45,8 +45,8 @@ const LoginForm = ({ history }) => {
     }
     if (auth) {
       console.log('로그인성공')
-      localStorage.setItem('auth', JSON.stringify(auth))
-      localStorage.setItem('token', auth.data.token)
+      // localStorage.setItem('auth', JSON.stringify(auth))
+      // localStorage.setItem('token', auth.data.token)
       dispatch(check())
     }
   }, [auth, authError, dispatch])

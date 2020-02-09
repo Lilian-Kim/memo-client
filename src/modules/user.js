@@ -42,7 +42,7 @@ export function* userSaga() {
 const initialState = {
   user: null,
   checkError: null,
-  token:'',
+  // token:'',
 }
 
 export default handleActions(
@@ -50,13 +50,13 @@ export default handleActions(
     [TEMP_SET_USER]: (state, { payload: user }) => ({
       ...state,
       user,
-      token: localStorage.getItem('token')
+      // token: localStorage.getItem('token')
     }),
     [CHECK_SUCCESS]: (state, { payload: user }) => ({
       ...state,
       user,
       checkError: null,
-      token: localStorage.getItem('token')
+      // token: localStorage.getItem('token')
     }),
     [CHECK_FAILURE]: (state, { payload: error }) => ({
       ...state,
